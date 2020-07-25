@@ -70,8 +70,8 @@ function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
   }
 
   // if the user enters less than 8 or more than 128 characters as preference then the system should reprompt them to enter a valid number of characters
-  // else
-  // {
-  //   alert("Please select between 8 and 128 characters!");
-  // }
+  else
+  {
+    alert("Please select between 8 and 128 characters!");
+  }
 }
