@@ -24,7 +24,7 @@ function generatePassword(totalChar, passLow, passUpper, passNum, passSpc) {
   // make sure that user atleast selects one condition
   if (totalChar === false && passLow === false && passUpper === false && passNum == false && passSpc === false) {
     // check 1 of the password conditions of the length being between 8 and 128
-    if (totalChar >= 8 && totalChar <= 128) {
+    if (totalChar >= 8 && totalChar <= 128 && totalChar != null) {
       // if the user wants lower case characters then 
       if (passLow === true) {
         // for each character in the lowerCase variable "push" it into the passArr
