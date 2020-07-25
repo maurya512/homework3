@@ -21,17 +21,18 @@ function generatePassword(totalChar, passLow, passUpper, passNum, passSpc) {
   // create an empty array that will be populated with randomized characters that will eventually become the user's password 
   var result = [];
 
+  // make sure that user enters a numerical value for the length of the password
+  if (totalChar === "" || totalChar === null || isNaN(totalChar)) {
+    alert("Please enter numerical value for the password's length!");
+    return location.reload();
+  }
+   
   // make sure that user atleast selects one condition
   if (passLow === false && passUpper === false && passNum === false && passSpc === false) {
     alert("Please select atleast 1 criteria for the password!");
     return location.reload();
   }
 
-  // make sure that user enters a numerical value for the length of the password
-  if (totalChar === "" || totalChar === null || isNaN(totalChar)) {
-    alert("Please enter numerical value for the password's length!");
-    return location.reload();
-  }
   // check 1 of the password conditions of the length being between 8 and 128
   if (parseInt(totalChar) >= 8 && parseInt(totalChar) <= 128) {
     // if the user wants lower case characters then 
