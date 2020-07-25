@@ -61,5 +61,17 @@ function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
         passArr.push(specialCase[i]);
       }
     }
+
+    // push the randomized characters from passArr into result array, passChar number of times 
+    for(var i =0; i < passChar; i++)
+    {
+      result.push(passArr[Math.floor(Math.random() * passArr.length)]);
+    }
   }
+
+  // if the user enters less than 8 or more than 128 characters as preference then the system should reprompt them to enter a valid number of characters
+  // else
+  // {
+  //   alert("Please select between 8 and 128 characters!");
+  // }
 }
