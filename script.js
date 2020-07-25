@@ -14,7 +14,7 @@ var wantNum = confirm("Do you want numbers in your password?");
 var wantSpc = confirm("Do you want special characters in your password?");
 
 // create a function that takes the user prompts as arguments
-function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
+function generatePassword(totalChar, passLow, passUpper, passNum, passSpc)
 {
   // create an empty array that will be populated once the user makes a selection of the type of password they want i.e lower, upper, number, etc. 
   var passArr = [];
@@ -23,10 +23,10 @@ function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
   var result = [];
 
   // check 1 of the password conditions of the length being between 8 and 128
-  if(passChar >= 8 && passChar <= 128)
+  if(totalChar >= 8 && totalChar <= 128)
   {
     // if the user wants lower case characters then 
-    if(wantLower === true)
+    if(passLow === true)
     {
       // for each character in the lowerCase variable "push" it into the passArr
       for(var i =0; i < lowerCase.length; i++)
@@ -35,7 +35,7 @@ function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
       }
     }
     // if the user wants upper case characters then 
-    if(wantUpper === true)
+    if(passUpper === true)
     {
       // for each character in the upperCase var "push" them into the passArr
       for(var i=0; i < upperCase.length; i++)
@@ -44,7 +44,7 @@ function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
       }
     }
     // if the user wants numericals then
-    if(wantNum === true)
+    if(passNum === true)
     {
       // for each character in the numbers var "push" them into the passArr
       for(var i=0; i < numbers.length; i++)
@@ -53,7 +53,7 @@ function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
       }
     }
     // if the user wants special characters then
-    if(wantSpc === true)
+    if(passSpc === true)
     {
       // for each character in the specialCase var "push" them into the passArr
       for(var i= 0; i < specialCase.length; i++)
@@ -74,4 +74,17 @@ function generatePassword(passChar, wantLower, wantUpper, wantNum, wantSpc)
   {
     alert("Please select between 8 and 128 characters!");
   }
+  // joins the individual characters into the array as a "string"
+  return result.join("");
 }
+
+// // Write password to the #password input
+// function writePassword()
+// {
+//   var password = generatePassword(totalChar, passLow, passUpper, passNum, passSpc);
+//   var passwordText = document.querySelector("#password");
+//   passwordText.value = password;
+// }
+
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
